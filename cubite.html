@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Cubite</title>
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet" type='text/css'>
+    <link href="./static/css/cubite.css" rel="stylesheet" type="text/css"/>
+    <script src="./static/js/lib/d3.v2.min.js"></script>
+    <script src="./static/js/lib/cubism.v1.js"></script>
+    <script src="./static/js/cubite.js"></script>
+  </head>
+  <body></body>
+  <script>
+
+    var cubite = new Cubite(
+
+      // Graphite host
+
+      "http://graphite.server.host.com",
+
+      // Graphite targets
+
+      [
+        {
+          label: "Server1 - QPS",
+          target: "keepLastValue(avg(stats.gauges.server1.qps.mean))"
+        },
+        {
+          label: "Server2 - QPS",
+          target: "keepLastValue(avg(stats.gauges.server2.qps.mean))"
+        },
+        {
+          label: "Server3 - QPS",
+          target: "keepLastValue(avg(stats.gauges.server3.qps.mean))"
+        }
+      ],
+
+      // Optional configuration
+
+      {
+        title: "Server Query Per Second (ms)",
+        step: 6e4, // 1 min
+        size: 1080, // 1080 pixels
+      }
+    );
+
+    // Render Cubite to <body>
+
+    cubite.render("body");
+
+  </script>
+</html>
