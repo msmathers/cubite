@@ -12,41 +12,41 @@
   <body></body>
   <script>
 
-    var cubite = new Cubite(
+  var cubite = new Cubite(
 
-      // Graphite host
+    // Graphite host
 
-      "http://graphite.server.host.com",
+    "http://graphite.server.host.com",
 
-      // Graphite targets
+    // Graphite targets
 
-      [
-        {
-          label: "Server1 - QPS",
-          target: "keepLastValue(avg(stats.gauges.server1.qps.mean))"
-        },
-        {
-          label: "Server2 - QPS",
-          target: "keepLastValue(avg(stats.gauges.server2.qps.mean))"
-        },
-        {
-          label: "Server3 - QPS",
-          target: "keepLastValue(avg(stats.gauges.server3.qps.mean))"
-        }
-      ],
-
-      // Optional configuration
-
+    [
       {
-        title: "Server Query Per Second (ms)",
-        step: 6e4, // 1 min
-        size: 1080, // 1080 pixels
+        label: "Server1 - QPS",
+        target: "keepLastValue(avg(stats.gauges.server1.qps.mean))"
+      },
+      {
+        label: "Server2 - QPS",
+        target: "keepLastValue(avg(stats.gauges.server2.qps.mean))"
+      },
+      {
+        label: "Server3 - QPS",
+        target: "keepLastValue(avg(stats.gauges.server3.qps.mean))"
       }
-    );
+    ],
 
-    // Render Cubite to <body>
+    // Optional configuration
 
-    cubite.render("body");
+    {
+      title: "Server Query Per Second (ms)",
+      step: 6e4, // 1 min
+      size: 1080, // 1080 pixels
+    }
+  );
+
+  // Render Cubite to <body>
+
+  cubite.render("body");
 
   </script>
 </html>

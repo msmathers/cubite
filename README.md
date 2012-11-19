@@ -1,5 +1,5 @@
-Cubite - Client-side time vizualization
-=======================================
+Cubite - Client-side time series vizualization
+==============================================
 
 Powered by [Cubism.js](http://square.github.com/cubism/) + [Graphite](http://graphite.wikidot.com/)
 
@@ -7,9 +7,7 @@ Powered by [Cubism.js](http://square.github.com/cubism/) + [Graphite](http://gra
 
 ## What is Cubite?
 
-Cubite uses your browser to render multiple Graphite data series into horizon charts. It is a thin wrapper around the Graphite metric hooks in Cubism.js with boilerplate JS/CSS/HTML.
-
-By modifying an HTML file, you can quickly build a fully client-side dashboard for time series vizualization.
+Cubite uses your browser to render multiple Graphite data series into horizon charts. It is a thin wrapper around the Graphite metric hooks in Cubism.js with boilerplate JS/CSS/HTML. By modifying an HTML file, you can quickly build a fully client-side dashboard for time series vizualization.
 
 Requires a Graphite server accessible via browser.
 
@@ -17,15 +15,15 @@ Requires a Graphite server accessible via browser.
 
 ```html
 <script>
-  var cubite = new Cubite(
-    "http://graphite.server.host.com",
-    [
-      {label: "Metric1", target: "avg(graphite.target.metric1)"},
-      {label: "Metric2", target: "avg(graphite.target.metric2)"},
-      {label: "Metric3", target: "avg(graphite.target.metric3)"}
-    ]
-  );
-  cubite.render("body");
+var cubite = new Cubite(
+  "http://graphite.server.host.com",
+  [
+    {label: "Metric1", target: "avg(graphite.target.metric1)"},
+    {label: "Metric2", target: "avg(graphite.target.metric2)"},
+    {label: "Metric3", target: "avg(graphite.target.metric3)"}
+  ]
+);
+cubite.render("body");
 </script>
 ```
 
@@ -33,7 +31,7 @@ Requires a Graphite server accessible via browser.
 
 1) Clone the repo
 
-    git clone git://github.com/msmathers/Cubite.git
+    git clone git://github.com/msmathers/cubite.git
 
 2) Modify or copy /Cubite/cubite.html.  Configure your Graphite host & targets.
 
