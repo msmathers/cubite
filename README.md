@@ -33,9 +33,9 @@ cubite.render("body");
 
     git clone git://github.com/msmathers/cubite.git
 
-2) Modify or copy /Cubite/cubite.html.  Configure your Graphite host & targets.
+2) Modify or copy cubite.html.  Configure your Graphite host & targets.
 
-    cd Cubite
+    cd cubite
     cp cubite.html my_dashboard.html
     nano my_dashboard.html
 
